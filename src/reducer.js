@@ -15,18 +15,18 @@ const reducers = {};
 reducers[SetSubscriptionActionType] = (
   state: SubscriptionsState,
   action: SetSubscriptionAction
-): DataSetState<*> => {
+): SubscriptionsState => {
   return state.filter(({ id }) => id !== action.payload.id).concat({ ...action.payload })
 }
 
 reducers[RemoveSubscriptionActionType] = (
   state: SubscriptionsState,
-  action: RemoveSubscriptionActionType
-): DataSetState<*> => {
+  action: RemoveSubscriptionAction
+): SubscriptionsState => {
   return state.filter(({ id }) => id !== action.payload.id)
 }
 
-export default (state: DataSetState<*> = {}, action: Action): DataSetState<*> => {
+export default (state: SubscriptionsState = [], action: Action): SubscriptionsState => {
   const reducer = reducers[action.type]
 
   return reducer ? reducer(state, (action: any)) : state
