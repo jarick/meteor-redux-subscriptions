@@ -5,5 +5,5 @@ dist
 lib
 es
 coverage
-flow_typed
+flow-typed
 _book
