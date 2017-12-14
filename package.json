@@ -1,6 +1,6 @@
 {
   "name": "meteor-redux-subscriptions",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Redux reducer for meteor subscriptions",
   "main": "lib/meteor-redux-subscriptions.js",
   "module": "es/meteor-redux-subscriptions.js",

@@ -21,11 +21,13 @@ export default (
         return new Promise((resolve, reject) => {
           const data: MeteorCallbacks = {
             onStop(error) {
-              dispatch({
-                type: SetSubscriptionActionType,
-                payload: { id: subscriptionId, load: true, name }
-              })
-              reject(error)
+              if (error) {
+                dispatch({
+                  type: SetSubscriptionActionType,
+                  payload: { id: subscriptionId, load: true, name }
+                })
+                reject(error)
+              }
             },
             onReady() {
               dispatch({
